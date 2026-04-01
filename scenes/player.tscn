@@ -4,9 +4,6 @@
 [ext_resource type="Texture2D" uid="uid://cptonwjffd3mb" path="res://sprites/mc/mc.png" id="2_qhqgy"]
 [ext_resource type="Script" uid="uid://bpesv4qkssjoi" path="res://scenes/player_sprite.gd" id="3_qhqgy"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_qhqgy"]
-size = Vector2(8, 10)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_dqkch"]
 atlas = ExtResource("2_qhqgy")
 region = Rect2(64, 0, 32, 39)
@@ -82,17 +79,31 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qhqgy"]
+size = Vector2(9, 10)
+
 [node name="player" type="CharacterBody2D" unique_id=961866205]
 z_index = 1
 script = ExtResource("1_g2els")
+
+[node name="player_sprite" type="AnimatedSprite2D" parent="." unique_id=300548949]
+position = Vector2(0, -17)
+sprite_frames = SubResource("SpriteFrames_smehm")
+animation = &"idle_front"
+script = ExtResource("3_qhqgy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=578122749]
 y_sort_enabled = true
 position = Vector2(0, -5)
 shape = SubResource("RectangleShape2D_qhqgy")
 
-[node name="player_sprite" type="AnimatedSprite2D" parent="." unique_id=300548949]
-position = Vector2(-1, -17)
-sprite_frames = SubResource("SpriteFrames_smehm")
-animation = &"walk_side"
-script = ExtResource("3_qhqgy")
+[node name="Camera2D" type="Camera2D" parent="." unique_id=468271877]
+position = Vector2(0, -15)
+zoom = Vector2(2, 2)
+limit_left = 0
+limit_top = 0
+limit_right = 229
+limit_bottom = 357
+limit_smoothed = true
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
