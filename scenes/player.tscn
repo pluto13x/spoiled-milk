@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://capmpr0a5hrh8" path="res://scripts/player.gd" id="1_g2els"]
 [ext_resource type="Texture2D" uid="uid://cptonwjffd3mb" path="res://sprites/mc/mc.png" id="2_qhqgy"]
-[ext_resource type="Script" uid="uid://bpesv4qkssjoi" path="res://scenes/player_sprite.gd" id="3_qhqgy"]
+[ext_resource type="Script" uid="uid://bpesv4qkssjoi" path="res://scripts/player_sprite.gd" id="3_qhqgy"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dqkch"]
 atlas = ExtResource("2_qhqgy")
@@ -104,6 +104,5 @@ limit_left = 0
 limit_top = 0
 limit_right = 229
 limit_bottom = 357
-limit_smoothed = true
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
