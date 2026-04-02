@@ -6,10 +6,10 @@ var speed = 100
 var dir_queue: Array[Vector2] = []
 
 const DIR_BY_ACTION := {
-	"ui_right": Vector2.RIGHT,
-	"ui_left":  Vector2.LEFT,
-	"ui_down":  Vector2.DOWN,
-	"ui_up":    Vector2.UP,
+	"right": Vector2.RIGHT,
+	"left":  Vector2.LEFT,
+	"down":  Vector2.DOWN,
+	"up":    Vector2.UP,
 }
 
 func _ready():
