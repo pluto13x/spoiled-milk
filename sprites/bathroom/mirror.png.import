@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c0gn21setpw3a"
-path="res://.godot/imported/bedroom.png-acfdfb0e7f2d9c60553b92b4179942f7.ctex"
+uid="uid://dbolsr2yq0qus"
+path="res://.godot/imported/mirror.png-478665c28c4d0269303c50c083a3b66f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/tilesets/bedroom.png"
-dest_files=["res://.godot/imported/bedroom.png-acfdfb0e7f2d9c60553b92b4179942f7.ctex"]
+source_file="res://sprites/bathroom/mirror.png"
+dest_files=["res://.godot/imported/mirror.png-478665c28c4d0269303c50c083a3b66f.ctex"]
 
 [params]
 

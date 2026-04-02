@@ -89,7 +89,7 @@ script = ExtResource("1_g2els")
 [node name="player_sprite" type="AnimatedSprite2D" parent="." unique_id=300548949]
 position = Vector2(0, -17)
 sprite_frames = SubResource("SpriteFrames_smehm")
-animation = &"idle_front"
+animation = &"idle_back"
 script = ExtResource("3_qhqgy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=578122749]

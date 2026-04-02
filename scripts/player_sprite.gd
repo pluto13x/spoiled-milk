@@ -1,9 +1,6 @@
 extends AnimatedSprite2D
 
-func _ready():
-	play("idle_front")
-	
-var dir = "down"
+var dir = ""
 var movement = 0
 
 func _process(_delta: float) -> void:

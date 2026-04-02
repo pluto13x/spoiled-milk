@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c7g55lqk1g0xw"
-path="res://.godot/imported/closet.png-555370308e19feef6623040be2ff359e.ctex"
+uid="uid://ckfjykekyeshf"
+path="res://.godot/imported/nightstand.png-668fa3d1f68dea0ff738f2cae97e7c1e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/furniture/closet.png"
-dest_files=["res://.godot/imported/closet.png-555370308e19feef6623040be2ff359e.ctex"]
+source_file="res://sprites/bedroom/nightstand.png"
+dest_files=["res://.godot/imported/nightstand.png-668fa3d1f68dea0ff738f2cae97e7c1e.ctex"]
 
 [params]
 

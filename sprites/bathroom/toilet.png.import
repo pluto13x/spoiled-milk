@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://wpxldmygptwi"
-path="res://.godot/imported/bed.png-a69870c364082f6e4212768093f30e62.ctex"
+uid="uid://nf4jw7l41r40"
+path="res://.godot/imported/toilet.png-cc4e2c3bbf9a2fefa4e993b4004034f6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/furniture/bed.png"
-dest_files=["res://.godot/imported/bed.png-a69870c364082f6e4212768093f30e62.ctex"]
+source_file="res://sprites/bathroom/toilet.png"
+dest_files=["res://.godot/imported/toilet.png-cc4e2c3bbf9a2fefa4e993b4004034f6.ctex"]
 
 [params]
 

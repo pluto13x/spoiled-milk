@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c0gn21setpw3a"
-path="res://.godot/imported/bedroom.png-acfdfb0e7f2d9c60553b92b4179942f7.ctex"
+uid="uid://d2kfv7ga6oje"
+path="res://.godot/imported/chair.png-7bbbd4f1400d541464ee3af44fe2fb35.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/tilesets/bedroom.png"
-dest_files=["res://.godot/imported/bedroom.png-acfdfb0e7f2d9c60553b92b4179942f7.ctex"]
+source_file="res://sprites/bedroom/chair.png"
+dest_files=["res://.godot/imported/chair.png-7bbbd4f1400d541464ee3af44fe2fb35.ctex"]
 
 [params]
 

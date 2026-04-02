@@ -1,0 +1,82 @@
+[gd_scene format=4 uid="uid://dkgnwcmwh68aa"]
+
+[ext_resource type="TileSet" uid="uid://cruhrq85tsndc" path="res://sprites/tilesets/tilesets.tres" id="1_gknyc"]
+[ext_resource type="Script" uid="uid://dppuex5boghbq" path="res://scripts/to_bedroom.gd" id="3_82jhl"]
+[ext_resource type="PackedScene" uid="uid://baj0jwdrv2hku" path="res://scenes/player.tscn" id="3_j2cwc"]
+[ext_resource type="Texture2D" uid="uid://fjppxs5x4ofa" path="res://sprites/bathroom/bathtub.png" id="4_q0btg"]
+[ext_resource type="Texture2D" uid="uid://dbolsr2yq0qus" path="res://sprites/bathroom/mirror.png" id="5_c3o6o"]
+[ext_resource type="Texture2D" uid="uid://nf4jw7l41r40" path="res://sprites/bathroom/toilet.png" id="6_hq5ij"]
+[ext_resource type="Texture2D" uid="uid://dequ57vcjyql8" path="res://sprites/bathroom/washingmachine.png" id="7_c0g1v"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q0btg"]
+size = Vector2(22, 42)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c0g1v"]
+size = Vector2(14, 13)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c3o6o"]
+size = Vector2(13.75, 12.25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hq5ij"]
+size = Vector2(27, 23)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qfxnf"]
+size = Vector2(31, 19)
+
+[node name="bathroom" type="Node2D" unique_id=20371978]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1878040971]
+tile_map_data = PackedByteArray("AAAAAAAAAQAKAAAAAAABAAAAAQALAAAAAAACAAAAAQALAAAAAAADAAAAAQALAAAAAAAEAAAAAQALAAAAAAAFAAAAAQAGAAAAAAAFAAEAAQAFAAAAAAAFAAIAAQAFAAAAAAAFAAMAAQAFAAAAAAAFAAQAAQAFAAAAAAAEAAUAAQAHAAAAAAADAAUAAQAHAAAAAAACAAUAAAAEAAAAAAABAAUAAQAHAAAAAAAFAAUAAQAIAAAAAAAAAAUAAQAJAAAAAAAAAAQAAQAMAAAAAAAAAAMAAQAMAAAAAAAAAAEAAQAMAAAAAAAAAAIAAQAMAAAAAAABAAEAAAACAAAAAAACAAEAAAACAAAAAAADAAEAAAACAAAAAAAEAAEAAAACAAAAAAABAAIAAAADAAAAAAACAAIAAAADAAAAAAADAAIAAAADAAAAAAAEAAIAAAADAAAAAAABAAMAAAABAAAAAAACAAMAAAABAAAAAAADAAMAAAABAAAAAAAEAAMAAAABAAAAAAAEAAQAAAABAAAAAAADAAQAAAABAAAAAAACAAQAAAABAAAAAAABAAQAAAABAAAAAAA=")
+tile_set = ExtResource("1_gknyc")
+
+[node name="ysort" type="Node2D" parent="." unique_id=119580115]
+y_sort_enabled = true
+
+[node name="player" parent="ysort" unique_id=961866205 instance=ExtResource("3_j2cwc")]
+position = Vector2(80, 153)
+
+[node name="furniture" type="StaticBody2D" parent="ysort" unique_id=256856766]
+y_sort_enabled = true
+
+[node name="Bathtub" type="Sprite2D" parent="ysort/furniture" unique_id=2119480871]
+position = Vector2(147, 113)
+texture = ExtResource("4_q0btg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ysort/furniture" unique_id=1818981791]
+position = Vector2(147, 113)
+shape = SubResource("RectangleShape2D_q0btg")
+
+[node name="Mirror" type="Sprite2D" parent="ysort/furniture" unique_id=151444655]
+position = Vector2(91, 83)
+texture = ExtResource("5_c3o6o")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="ysort/furniture" unique_id=834936860]
+position = Vector2(91, 100.5)
+shape = SubResource("RectangleShape2D_c0g1v")
+
+[node name="Toilet" type="Sprite2D" parent="ysort/furniture" unique_id=1452207007]
+position = Vector2(117, 92)
+texture = ExtResource("6_hq5ij")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="ysort/furniture" unique_id=1476719004]
+position = Vector2(117, 100.875)
+shape = SubResource("RectangleShape2D_c3o6o")
+
+[node name="Washingmachine" type="Sprite2D" parent="ysort/furniture" unique_id=1300634001]
+position = Vector2(59, 91)
+texture = ExtResource("7_c0g1v")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="ysort/furniture" unique_id=382355763]
+position = Vector2(58.5, 95.5)
+shape = SubResource("RectangleShape2D_hq5ij")
+
+[node name="ToBedroom" type="Area2D" parent="." unique_id=932865833]
+position = Vector2(80, 165)
+script = ExtResource("3_82jhl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ToBedroom" unique_id=1512680129]
+position = Vector2(0, 4.5)
+shape = SubResource("RectangleShape2D_qfxnf")
+
+[connection signal="body_entered" from="ToBedroom" to="ToBedroom" method="_on_body_entered"]
+[connection signal="body_exited" from="ToBedroom" to="ToBedroom" method="_on_body_exited"]

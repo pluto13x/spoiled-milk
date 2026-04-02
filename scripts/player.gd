@@ -12,6 +12,10 @@ const DIR_BY_ACTION := {
 	"ui_up":    Vector2.UP,
 }
 
+func _ready():
+	$player_sprite.dir = Global.last_dir
+	dir_queue = Global.dir_queue
+
 func _unhandled_input(event: InputEvent) -> void:
 	for action in DIR_BY_ACTION.keys():
 		if event.is_action_pressed(action):
@@ -36,7 +40,8 @@ func _dir_to_string(dir: Vector2) -> String:
 	if dir == Vector2.RIGHT: return "right"
 	if dir == Vector2.LEFT:  return "left"
 	if dir == Vector2.DOWN:  return "down"
-	return "up"
+	if dir == Vector2.UP: return "up"
+	else: return "up"
 
 func _physics_process(_delta: float) -> void:
 	var dir := Vector2.ZERO
@@ -48,12 +53,14 @@ func _physics_process(_delta: float) -> void:
 
 	if dir != Vector2.ZERO:
 		$player_sprite.dir = _dir_to_string(dir)
+		Global.last_dir = $player_sprite.dir
 		$player_sprite.movement = 1
 	else:
 		$player_sprite.movement = 0
+		
+	Global.dir_queue = dir_queue
 
 	move_and_slide()
+
 	
-func _ready():
-	$player_sprite.dir = "down"
 	

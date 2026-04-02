@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c0gn21setpw3a"
-path="res://.godot/imported/bedroom.png-acfdfb0e7f2d9c60553b92b4179942f7.ctex"
+uid="uid://fjppxs5x4ofa"
+path="res://.godot/imported/bathtub.png-7caebadea1561ee63e7c05ad7237d550.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/tilesets/bedroom.png"
-dest_files=["res://.godot/imported/bedroom.png-acfdfb0e7f2d9c60553b92b4179942f7.ctex"]
+source_file="res://sprites/bathroom/bathtub.png"
+dest_files=["res://.godot/imported/bathtub.png-7caebadea1561ee63e7c05ad7237d550.ctex"]
 
 [params]
 

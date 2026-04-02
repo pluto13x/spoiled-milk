@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c0gn21setpw3a"
-path="res://.godot/imported/bedroom.png-acfdfb0e7f2d9c60553b92b4179942f7.ctex"
+uid="uid://dequ57vcjyql8"
+path="res://.godot/imported/washingmachine.png-0bd4c031349400f35e96573ad3250de1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/tilesets/bedroom.png"
-dest_files=["res://.godot/imported/bedroom.png-acfdfb0e7f2d9c60553b92b4179942f7.ctex"]
+source_file="res://sprites/bathroom/washingmachine.png"
+dest_files=["res://.godot/imported/washingmachine.png-0bd4c031349400f35e96573ad3250de1.ctex"]
 
 [params]
 
