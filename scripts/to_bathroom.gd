@@ -11,8 +11,8 @@ func _on_body_entered(body: Node2D) -> void:
 		Global.nextx = 80
 		Global.nexty = 153
 	else:
-		Global.nextx = 81
-		Global.nexty = 113
+		Global.nextx = 41
+		Global.nexty = 147
 
 	
 func _process(_delta: float) -> void:

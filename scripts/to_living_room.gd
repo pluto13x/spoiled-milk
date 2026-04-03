@@ -16,6 +16,6 @@ func _on_body_entered(body: Node2D) -> void:
 		Global.nextx = 184
 		Global.nexty = 122
 	else:
-		Global.nextx = 0
-		Global.nexty = 0
+		Global.nextx = 162
+		Global.nexty = 113
 		

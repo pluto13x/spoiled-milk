@@ -42,7 +42,7 @@ texture = ExtResource("3_qum0h")
 y_sort_enabled = true
 
 [node name="player" parent="ysort" unique_id=961866205 instance=ExtResource("2_0vul7")]
-position = Vector2(184, 122)
+position = Vector2(162, 113)
 
 [node name="furniture" type="StaticBody2D" parent="ysort" unique_id=1468123474]
 y_sort_enabled = true

@@ -2,15 +2,138 @@
 
 [ext_resource type="TileSet" uid="uid://cruhrq85tsndc" path="res://sprites/tilesets/tilesets.tres" id="1_7ilqw"]
 [ext_resource type="PackedScene" uid="uid://baj0jwdrv2hku" path="res://scenes/player.tscn" id="2_mrp8g"]
+[ext_resource type="Texture2D" uid="uid://dw266brbnafjg" path="res://sprites/kitchen/appliances.png" id="3_mwmjw"]
+[ext_resource type="Texture2D" uid="uid://bcmwabnc88gss" path="res://sprites/kitchen/chair1.png" id="4_cwf2y"]
+[ext_resource type="Texture2D" uid="uid://bg0ax0ia2hpba" path="res://sprites/kitchen/chair2.png" id="5_vpxcu"]
+[ext_resource type="Texture2D" uid="uid://7hvl4wcq8h6" path="res://sprites/kitchen/chair3.png" id="6_k1jr4"]
+[ext_resource type="Texture2D" uid="uid://cdj67fmmfye02" path="res://sprites/kitchen/table.png" id="7_umms5"]
+[ext_resource type="Texture2D" uid="uid://5v1hxlysvoy2" path="res://sprites/kitchen/trash1.png" id="8_ktc20"]
+[ext_resource type="Texture2D" uid="uid://dmtn2g0xnsbex" path="res://sprites/kitchen/trash2.png" id="9_bs8bs"]
+[ext_resource type="Script" uid="uid://dxywyka2o88cy" path="res://scripts/to_bathroom.gd" id="10_cwf2y"]
+[ext_resource type="Script" uid="uid://byh8vmk0wtac3" path="res://scripts/to_living_room.gd" id="11_vpxcu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mwmjw"]
+size = Vector2(15, 17)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cwf2y"]
+size = Vector2(14, 14)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vpxcu"]
+radius = 4.4711914
+height = 30.367249
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vpxcu"]
+size = Vector2(48, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k1jr4"]
+size = Vector2(15, 12)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_umms5"]
+size = Vector2(15, 13)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ktc20"]
+size = Vector2(127, 26)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bs8bs"]
+size = Vector2(17, 34)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_88wuv"]
+size = Vector2(20, 30)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_acu1m"]
+size = Vector2(30, 20)
 
 [node name="kitchen" type="Node2D" unique_id=1120761700]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=94487910]
-tile_map_data = PackedByteArray("AAAFAAMAAAABAAAAAAAFAAQAAAABAAAAAAAFAAUAAAABAAAAAAAGAAUAAAABAAAAAAAHAAUAAAABAAAAAAAHAAQAAAABAAAAAAAHAAMAAAABAAAAAAAGAAMAAAABAAAAAAAGAAQAAAABAAAAAAAIAAMAAAABAAAAAAAIAAQAAAABAAAAAAAFAAYAAAABAAAAAAAGAAYAAAABAAAAAAAHAAcAAAABAAAAAAAIAAcAAAABAAAAAAAJAAgAAAABAAAAAAAKAAgAAAABAAAAAAALAAgAAAABAAAAAAALAAcAAAABAAAAAAALAAYAAAABAAAAAAAKAAYAAAABAAAAAAAJAAUAAAABAAAAAAAIAAUAAAABAAAAAAAIAAYAAAABAAAAAAAHAAYAAAABAAAAAAAJAAcAAAABAAAAAAAKAAcAAAABAAAAAAAJAAYAAAABAAAAAAAKAAUAAAABAAAAAAALAAUAAAABAAAAAAALAAQAAAABAAAAAAAKAAQAAAABAAAAAAAKAAMAAAABAAAAAAAJAAMAAAABAAAAAAAJAAQAAAABAAAAAAALAAMAAAABAAAAAAAFAAcAAAABAAAAAAAGAAcAAAABAAAAAAAFAAEAAAACAAAAAAAFAAIAAAACAAAAAAAGAAIAAAACAAAAAAAGAAEAAAACAAAAAAAHAAEAAAACAAAAAAAHAAIAAAACAAAAAAAIAAIAAAACAAAAAAAIAAEAAAACAAAAAAAJAAEAAAACAAAAAAAKAAEAAAACAAAAAAAKAAIAAAACAAAAAAAJAAIAAAACAAAAAAALAAIAAAACAAAAAAALAAEAAAACAAAAAAALAAAAAAACAAAAAAAKAAAAAAACAAAAAAAJAAAAAAACAAAAAAAIAAAAAAACAAAAAAAHAAAAAAACAAAAAAAGAAAAAAACAAAAAAAFAAAAAAACAAAAAAAGAAgAAAABAAAAAAAHAAgAAAABAAAAAAAIAAgAAAABAAAAAAAFAAgAAAABAAAAAAAMAAgAAAABAAAAAAANAAgAAAABAAAAAAAOAAgAAAABAAAAAAAPAAgAAAABAAAAAAAQAAgAAAABAAAAAAAPAAcAAAABAAAAAAAPAAYAAAABAAAAAAAOAAUAAAABAAAAAAANAAQAAAABAAAAAAAMAAMAAAABAAAAAAAMAAQAAAABAAAAAAAMAAUAAAABAAAAAAAMAAYAAAABAAAAAAAMAAcAAAABAAAAAAANAAMAAAABAAAAAAANAAUAAAABAAAAAAANAAYAAAABAAAAAAANAAcAAAABAAAAAAAOAAMAAAABAAAAAAAOAAQAAAABAAAAAAAOAAYAAAABAAAAAAAOAAcAAAABAAAAAAAPAAMAAAABAAAAAAAPAAQAAAABAAAAAAAPAAUAAAABAAAAAAAQAAMAAAABAAAAAAAQAAQAAAABAAAAAAAQAAUAAAABAAAAAAAQAAYAAAABAAAAAAAQAAcAAAABAAAAAAAMAAAAAAACAAAAAAAMAAEAAAACAAAAAAAMAAIAAAACAAAAAAANAAAAAAACAAAAAAANAAEAAAACAAAAAAANAAIAAAACAAAAAAAOAAAAAAACAAAAAAAOAAEAAAACAAAAAAAOAAIAAAACAAAAAAAPAAAAAAACAAAAAAAPAAEAAAACAAAAAAAPAAIAAAACAAAAAAAQAAAAAAACAAAAAAAQAAEAAAACAAAAAAAQAAIAAAACAAAAAAA=")
+tile_map_data = PackedByteArray("AAAAAAAAAQAKAAAAAAABAAAAAQALAAAAAAACAAAAAQALAAAAAAADAAAAAQALAAAAAAAEAAAAAQALAAAAAAAFAAAAAQALAAAAAAAGAAAAAQAGAAAAAAAAAAEAAQAMAAAAAAAAAAIAAQAMAAAAAAAAAAMAAQAMAAAAAAAAAAQAAQAMAAAAAAAAAAUAAQAMAAAAAAABAAYAAQAHAAAAAAACAAYAAQAHAAAAAAADAAYAAQAHAAAAAAAEAAYAAQAHAAAAAAAFAAYAAQARAAAAAAAAAAYAAQAJAAAAAAAGAAYAAQAIAAAAAAAGAAUAAQAFAAAAAAAGAAQAAQAOAAAAAAAGAAMAAQAFAAAAAAAGAAIAAQAFAAAAAAAGAAEAAQAFAAAAAAAFAAUAAQABAAAAAAAEAAUAAQABAAAAAAADAAUAAQABAAAAAAACAAUAAQABAAAAAAABAAUAAQABAAAAAAABAAQAAQAQAAAAAAACAAQAAQAQAAAAAAADAAQAAQAQAAAAAAAEAAQAAQAQAAAAAAABAAMAAQAPAAAAAAACAAMAAQAPAAAAAAADAAMAAQAPAAAAAAAEAAMAAQAPAAAAAAAFAAMAAQABAAAAAAAFAAQAAQABAAAAAAABAAIAAAAFAAAAAAACAAIAAAAFAAAAAAADAAIAAAAFAAAAAAAEAAIAAAAFAAAAAAAFAAIAAQADAAAAAAABAAEAAQACAAAAAAACAAEAAQACAAAAAAADAAEAAQACAAAAAAAEAAEAAQACAAAAAAAFAAEAAQACAAAAAAA=")
 tile_set = ExtResource("1_7ilqw")
 
 [node name="ysort" type="Node2D" parent="." unique_id=1189254843]
 y_sort_enabled = true
 
 [node name="player" parent="ysort" unique_id=961866205 instance=ExtResource("2_mrp8g")]
-position = Vector2(230, 149)
+position = Vector2(125, 146)
+
+[node name="Appliances" type="Sprite2D" parent="ysort" unique_id=1553996393]
+position = Vector2(96, 91)
+texture = ExtResource("3_mwmjw")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="ysort" unique_id=506588216]
+y_sort_enabled = true
+
+[node name="Chair1" type="Sprite2D" parent="ysort/StaticBody2D" unique_id=350077461]
+position = Vector2(49, 164)
+texture = ExtResource("4_cwf2y")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ysort/StaticBody2D" unique_id=1501628432]
+position = Vector2(49, 170)
+shape = SubResource("RectangleShape2D_mwmjw")
+
+[node name="Chair2" type="Sprite2D" parent="ysort/StaticBody2D" unique_id=229212445]
+position = Vector2(88, 160)
+texture = ExtResource("5_vpxcu")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="ysort/StaticBody2D" unique_id=43783306]
+position = Vector2(90, 163)
+shape = SubResource("RectangleShape2D_cwf2y")
+
+[node name="Chair3" type="Sprite2D" parent="ysort/StaticBody2D" unique_id=50119945]
+position = Vector2(135, 174)
+texture = ExtResource("6_k1jr4")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="ysort/StaticBody2D" unique_id=1276178629]
+position = Vector2(136, 177)
+rotation = 1.0865575
+shape = SubResource("CapsuleShape2D_vpxcu")
+
+[node name="Table" type="Sprite2D" parent="ysort/StaticBody2D" unique_id=607480710]
+position = Vector2(89, 174)
+texture = ExtResource("7_umms5")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="ysort/StaticBody2D" unique_id=626638444]
+position = Vector2(89, 177)
+shape = SubResource("RectangleShape2D_vpxcu")
+
+[node name="Trash1" type="Sprite2D" parent="ysort/StaticBody2D" unique_id=204903650]
+position = Vector2(169, 95)
+texture = ExtResource("8_ktc20")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="ysort/StaticBody2D" unique_id=1747122706]
+position = Vector2(169, 94)
+shape = SubResource("RectangleShape2D_k1jr4")
+
+[node name="Trash2" type="Sprite2D" parent="ysort/StaticBody2D" unique_id=1879556536]
+position = Vector2(180, 114)
+texture = ExtResource("9_bs8bs")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="ysort/StaticBody2D" unique_id=451999099]
+position = Vector2(181, 115)
+shape = SubResource("RectangleShape2D_umms5")
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="ysort/StaticBody2D" unique_id=520020438]
+position = Vector2(96.5, 91)
+shape = SubResource("RectangleShape2D_ktc20")
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="ysort/StaticBody2D" unique_id=1306125857]
+position = Vector2(41.5, 121)
+shape = SubResource("RectangleShape2D_bs8bs")
+
+[node name="toBathroom" type="Area2D" parent="." unique_id=1675848026]
+script = ExtResource("10_cwf2y")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="toBathroom" unique_id=1428919898]
+position = Vector2(204, 144)
+shape = SubResource("RectangleShape2D_88wuv")
+debug_color = Color(0, 0.6409146, 0.34740266, 0.41960785)
+
+[node name="toLivingroom" type="Area2D" parent="." unique_id=372167370]
+script = ExtResource("11_vpxcu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="toLivingroom" unique_id=601959477]
+position = Vector2(176, 203)
+shape = SubResource("RectangleShape2D_acu1m")
+debug_color = Color(0.16693118, 0.6249008, 0.4532233, 0.41960785)
+
+[connection signal="body_entered" from="toBathroom" to="toBathroom" method="_on_body_entered"]
+[connection signal="body_entered" from="toLivingroom" to="toLivingroom" method="_on_body_entered"]
