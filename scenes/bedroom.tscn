@@ -9,9 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://c7xyh0yihivty" path="res://sprites/door.png" id="7_tjgix"]
 [ext_resource type="Texture2D" uid="uid://cfexsfvogpk2n" path="res://sprites/bedroom/table.png" id="8_0w1sy"]
 [ext_resource type="Texture2D" uid="uid://d2kfv7ga6oje" path="res://sprites/bedroom/chair.png" id="9_hdjrh"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_xunnl"]
-size = Vector2(24, 20)
+[ext_resource type="Script" uid="uid://byh8vmk0wtac3" path="res://scripts/to_living_room.gd" id="10_hdjrh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0w1sy"]
 size = Vector2(27, 18)
@@ -28,29 +26,26 @@ size = Vector2(18, 16)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lv7wv"]
 size = Vector2(16, 19)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xunnl"]
+size = Vector2(24, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k5fq4"]
+size = Vector2(20, 30)
+
 [node name="bedroom" type="Node2D" unique_id=2104473977]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1492393427]
 tile_map_data = PackedByteArray("AAAAAAAAAQAKAAAAAAABAAAAAQALAAAAAAACAAAAAQALAAAAAAADAAAAAQALAAAAAAAEAAAAAQALAAAAAAAFAAAAAQAGAAAAAAAAAAEAAQAMAAAAAAAAAAIAAQAMAAAAAAAAAAMAAQAMAAAAAAAAAAQAAQANAAAAAAAAAAUAAQAMAAAAAAABAAEAAQACAAAAAAACAAEAAQACAAAAAAADAAEAAQACAAAAAAAEAAEAAQACAAAAAAABAAIAAQADAAAAAAACAAIAAQADAAAAAAADAAIAAQADAAAAAAAEAAIAAQADAAAAAAABAAMAAQABAAAAAAACAAMAAQABAAAAAAADAAMAAQABAAAAAAAEAAMAAQABAAAAAAAEAAQAAQABAAAAAAADAAQAAQABAAAAAAACAAQAAQABAAAAAAABAAQAAQABAAAAAAABAAUAAQABAAAAAAACAAUAAQABAAAAAAADAAUAAQABAAAAAAAEAAUAAQABAAAAAAABAAYAAQAHAAAAAAACAAYAAQAHAAAAAAADAAYAAQAHAAAAAAAEAAYAAQAHAAAAAAAAAAYAAQAJAAAAAAAFAAYAAQAIAAAAAAAFAAUAAQAFAAAAAAAFAAQAAQAFAAAAAAAFAAMAAQAFAAAAAAAFAAIAAQAFAAAAAAAFAAEAAQAFAAAAAAA=")
 tile_set = ExtResource("1_pwtdf")
 
-[node name="ToBathroom" type="Area2D" parent="." unique_id=2003250729]
-position = Vector2(58, 158)
-script = ExtResource("7_k5fq4")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ToBathroom" unique_id=1317622921]
-position = Vector2(22, -67)
-shape = SubResource("RectangleShape2D_xunnl")
-
 [node name="ysort" type="Node2D" parent="." unique_id=2134805623]
 y_sort_enabled = true
 
 [node name="player" parent="ysort" unique_id=961866205 instance=ExtResource("2_xunnl")]
-z_index = 0
-position = Vector2(76, 149)
+position = Vector2(39, 152)
 
 [node name="Door" type="Sprite2D" parent="ysort" unique_id=49724204]
-position = Vector2(80, 57)
+position = Vector2(80, 58)
 texture = ExtResource("7_tjgix")
 offset = Vector2(0, 19)
 
@@ -98,5 +93,22 @@ shape = SubResource("RectangleShape2D_lj4hb")
 position = Vector2(122, 97.5)
 shape = SubResource("RectangleShape2D_lv7wv")
 
+[node name="ToBathroom" type="Area2D" parent="." unique_id=2003250729]
+position = Vector2(58, 158)
+script = ExtResource("7_k5fq4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ToBathroom" unique_id=1317622921]
+position = Vector2(22, -67)
+shape = SubResource("RectangleShape2D_xunnl")
+debug_color = Color(2.0696223e-06, 0.6296471, 0.4836856, 0.41960785)
+
+[node name="ToLivingroom" type="Area2D" parent="." unique_id=956276240]
+script = ExtResource("10_hdjrh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ToLivingroom" unique_id=946996264]
+position = Vector2(21, 144)
+shape = SubResource("RectangleShape2D_k5fq4")
+debug_color = Color(0, 0.62955725, 0.48457414, 0.41960785)
+
 [connection signal="body_entered" from="ToBathroom" to="ToBathroom" method="_on_body_entered"]
-[connection signal="body_exited" from="ToBathroom" to="ToBathroom" method="_on_body_exited"]
+[connection signal="body_entered" from="ToLivingroom" to="ToLivingroom" method="_on_body_entered"]

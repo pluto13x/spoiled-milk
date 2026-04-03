@@ -15,6 +15,9 @@ const DIR_BY_ACTION := {
 func _ready():
 	$player_sprite.dir = Global.last_dir
 	dir_queue = Global.dir_queue
+	global_position.x = Global.nextx
+	global_position.y = Global.nexty
+	
 
 func _unhandled_input(event: InputEvent) -> void:
 	for action in DIR_BY_ACTION.keys():
@@ -61,6 +64,7 @@ func _physics_process(_delta: float) -> void:
 	Global.dir_queue = dir_queue
 
 	move_and_slide()
+	
 
 	
 	

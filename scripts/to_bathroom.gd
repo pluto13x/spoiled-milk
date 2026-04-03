@@ -7,12 +7,13 @@ func _on_body_entered(body: Node2D) -> void:
 	if not (body is CharacterBody2D):
 		return
 	entered = true
+	if get_tree().current_scene.name == "bedroom":
+		Global.nextx = 80
+		Global.nexty = 153
+	else:
+		Global.nextx = 81
+		Global.nexty = 113
 
-
-func _on_body_exited(body: Node2D) -> void:
-	if not (body is CharacterBody2D):
-		return
-	entered = false
 	
 func _process(_delta: float) -> void:
 	if entered:

@@ -77,6 +77,6 @@ script = ExtResource("3_82jhl")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ToBedroom" unique_id=1512680129]
 position = Vector2(0, 4.5)
 shape = SubResource("RectangleShape2D_qfxnf")
+debug_color = Color(0.024283215, 0.62630844, 0.5096614, 0.41960785)
 
 [connection signal="body_entered" from="ToBedroom" to="ToBedroom" method="_on_body_entered"]
-[connection signal="body_exited" from="ToBedroom" to="ToBedroom" method="_on_body_exited"]

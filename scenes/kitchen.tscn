@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://xge881c5461t"]
 
-[ext_resource type="TileSet" uid="uid://cluqdusuy27ox" path="res://sprites/tilesets/bedroom.tres" id="1_7ilqw"]
+[ext_resource type="TileSet" uid="uid://cruhrq85tsndc" path="res://sprites/tilesets/tilesets.tres" id="1_7ilqw"]
 [ext_resource type="PackedScene" uid="uid://baj0jwdrv2hku" path="res://scenes/player.tscn" id="2_mrp8g"]
 
 [node name="kitchen" type="Node2D" unique_id=1120761700]
@@ -13,5 +13,4 @@ tile_set = ExtResource("1_7ilqw")
 y_sort_enabled = true
 
 [node name="player" parent="ysort" unique_id=961866205 instance=ExtResource("2_mrp8g")]
-z_index = 0
 position = Vector2(230, 149)
