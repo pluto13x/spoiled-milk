@@ -53,7 +53,7 @@ tile_set = ExtResource("1_7ilqw")
 y_sort_enabled = true
 
 [node name="player" parent="ysort" unique_id=961866205 instance=ExtResource("2_mrp8g")]
-position = Vector2(125, 146)
+position = Vector2(185, 149)
 
 [node name="Appliances" type="Sprite2D" parent="ysort" unique_id=1553996393]
 position = Vector2(96, 91)

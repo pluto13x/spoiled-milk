@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://dq18xjneflyq8" path="res://sprites/livingroom/shelves.png" id="6_35nt2"]
 [ext_resource type="Texture2D" uid="uid://dgcm0u7x0ijxm" path="res://sprites/livingroom/tv.png" id="7_1wnl2"]
 [ext_resource type="Script" uid="uid://dppuex5boghbq" path="res://scripts/to_bedroom.gd" id="8_qum0h"]
+[ext_resource type="Script" uid="uid://b7x0j62c0eut4" path="res://scripts/to_kitchen.gd" id="8_y3r63"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_po3oh"]
 size = Vector2(30, 24)
@@ -73,6 +74,7 @@ position = Vector2(103.5, 138)
 shape = SubResource("RectangleShape2D_7ef23")
 
 [node name="toKitchen" type="Area2D" parent="." unique_id=1895406982]
+script = ExtResource("8_y3r63")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="toKitchen" unique_id=168374839]
 position = Vector2(162, 91)
@@ -87,4 +89,5 @@ position = Vector2(204, 112)
 shape = SubResource("RectangleShape2D_y3r63")
 debug_color = Color(9.62615e-07, 0.6306488, 0.4736365, 0.41960785)
 
+[connection signal="body_entered" from="toKitchen" to="toKitchen" method="_on_body_entered"]
 [connection signal="body_entered" from="toBedroom" to="toBedroom" method="_on_body_entered"]

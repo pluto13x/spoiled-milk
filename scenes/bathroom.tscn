@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dbolsr2yq0qus" path="res://sprites/bathroom/mirror.png" id="5_c3o6o"]
 [ext_resource type="Texture2D" uid="uid://nf4jw7l41r40" path="res://sprites/bathroom/toilet.png" id="6_hq5ij"]
 [ext_resource type="Texture2D" uid="uid://dequ57vcjyql8" path="res://sprites/bathroom/washingmachine.png" id="7_c0g1v"]
+[ext_resource type="Script" uid="uid://b7x0j62c0eut4" path="res://scripts/to_kitchen.gd" id="8_c3o6o"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q0btg"]
 size = Vector2(22, 42)
@@ -22,6 +23,9 @@ size = Vector2(27, 23)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qfxnf"]
 size = Vector2(31, 19)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ym42y"]
+size = Vector2(20, 30)
 
 [node name="bathroom" type="Node2D" unique_id=20371978]
 
@@ -79,4 +83,13 @@ position = Vector2(0, 4.5)
 shape = SubResource("RectangleShape2D_qfxnf")
 debug_color = Color(0.024283215, 0.62630844, 0.5096614, 0.41960785)
 
+[node name="ToKitchen" type="Area2D" parent="." unique_id=1875946249]
+script = ExtResource("8_c3o6o")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ToKitchen" unique_id=1756546112]
+position = Vector2(21, 144)
+shape = SubResource("RectangleShape2D_ym42y")
+debug_color = Color(0.18692207, 0.6272621, 0.40612143, 0.41960785)
+
 [connection signal="body_entered" from="ToBedroom" to="ToBedroom" method="_on_body_entered"]
+[connection signal="body_entered" from="ToKitchen" to="ToKitchen" method="_on_body_entered"]
