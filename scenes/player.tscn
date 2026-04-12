@@ -95,13 +95,3 @@ script = ExtResource("3_qhqgy")
 y_sort_enabled = true
 position = Vector2(0, -5)
 shape = SubResource("RectangleShape2D_qhqgy")
-
-[node name="Camera2D" type="Camera2D" parent="." unique_id=468271877]
-position = Vector2(0, -15)
-zoom = Vector2(2, 2)
-limit_left = 0
-limit_top = 0
-limit_right = 229
-limit_bottom = 357
-drag_horizontal_enabled = true
-drag_vertical_enabled = true

@@ -110,5 +110,8 @@ position = Vector2(21, 144)
 shape = SubResource("RectangleShape2D_k5fq4")
 debug_color = Color(0, 0.62955725, 0.48457414, 0.41960785)
 
+[node name="Camera2D" type="Camera2D" parent="." unique_id=192119773]
+position = Vector2(96, 120)
+
 [connection signal="body_entered" from="ToBathroom" to="ToBathroom" method="_on_body_entered"]
 [connection signal="body_entered" from="ToLivingroom" to="ToLivingroom" method="_on_body_entered"]

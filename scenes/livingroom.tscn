@@ -73,6 +73,9 @@ offset = Vector2(0.5, -10)
 position = Vector2(103.5, 138)
 shape = SubResource("RectangleShape2D_7ef23")
 
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1826431427]
+position = Vector2(114, 104)
+
 [node name="toKitchen" type="Area2D" parent="." unique_id=1895406982]
 script = ExtResource("8_y3r63")
 
