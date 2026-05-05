@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://cdj67fmmfye02" path="res://sprites/kitchen/table.png" id="7_umms5"]
 [ext_resource type="Texture2D" uid="uid://5v1hxlysvoy2" path="res://sprites/kitchen/trash1.png" id="8_ktc20"]
 [ext_resource type="Texture2D" uid="uid://dmtn2g0xnsbex" path="res://sprites/kitchen/trash2.png" id="9_bs8bs"]
+[ext_resource type="Texture2D" uid="uid://b83spunmdmj4s" path="res://sprites/kitchen/sink.png" id="9_k1jr4"]
 [ext_resource type="Script" uid="uid://dxywyka2o88cy" path="res://scripts/to_bathroom.gd" id="10_cwf2y"]
 [ext_resource type="Script" uid="uid://byh8vmk0wtac3" path="res://scripts/to_living_room.gd" id="11_vpxcu"]
 
@@ -54,10 +55,6 @@ y_sort_enabled = true
 
 [node name="player" parent="ysort" unique_id=961866205 instance=ExtResource("2_mrp8g")]
 position = Vector2(185, 149)
-
-[node name="Appliances" type="Sprite2D" parent="ysort" unique_id=1553996393]
-position = Vector2(96, 91)
-texture = ExtResource("3_mwmjw")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="ysort" unique_id=506588216]
 y_sort_enabled = true
@@ -118,6 +115,15 @@ shape = SubResource("RectangleShape2D_ktc20")
 [node name="CollisionShape2D8" type="CollisionShape2D" parent="ysort/StaticBody2D" unique_id=1306125857]
 position = Vector2(41.5, 121)
 shape = SubResource("RectangleShape2D_bs8bs")
+
+[node name="Sink" type="Sprite2D" parent="ysort/StaticBody2D" unique_id=5896258]
+position = Vector2(41, 115)
+texture = ExtResource("9_k1jr4")
+offset = Vector2(0, 1)
+
+[node name="Appliances" type="Sprite2D" parent="ysort/StaticBody2D" unique_id=1553996393]
+position = Vector2(89, 74)
+texture = ExtResource("3_mwmjw")
 
 [node name="toBathroom" type="Area2D" parent="." unique_id=1675848026]
 script = ExtResource("10_cwf2y")

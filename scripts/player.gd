@@ -1,7 +1,7 @@
 extends CharacterBody2D
 #Queue movement
 
-var speed = 100
+var speed = 70
 
 var dir_queue: Array[Vector2] = []
 
